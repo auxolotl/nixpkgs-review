@@ -10,7 +10,7 @@ from .utils import ensure_github_token, get_current_pr
 def comments_query(pr: int) -> str:
     return """
 {
-    repository(owner: "NixOS", name: "nixpkgs") {
+    repository(owner: "auxolotl", name: "nixpkgs") {
         pullRequest(number: %d) {
             author { login }
             body
