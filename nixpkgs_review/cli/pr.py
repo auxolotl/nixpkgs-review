@@ -19,7 +19,7 @@ def parse_pr_numbers(number_args: list[str]) -> list[int]:
         if m:
             prs.extend(range(int(m.group(1)), int(m.group(2))))
         else:
-            m = re.match(r"https://github.com/NixOS/nixpkgs/pull/(\d+)/?.*", arg)
+            m = re.match(r"https://github.com/auxolotl/nixpkgs/pull/(\d+)/?.*", arg)
             if m:
                 prs.append(int(m.group(1)))
             else:
@@ -75,7 +75,7 @@ def pr_command(args: argparse.Namespace) -> str:
                 )
                 contexts.append((pr, builddir.path, review.build_pr(pr)))
             except NixpkgsReviewError as e:
-                warn(f"https://github.com/NixOS/nixpkgs/pull/{pr} failed to build: {e}")
+                warn(f"https://github.com/auxolotl/nixpkgs/pull/{pr} failed to build: {e}")
         assert review is not None
 
         for pr, path, attrs in contexts:

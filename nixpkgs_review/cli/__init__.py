@@ -185,7 +185,7 @@ def common_flags() -> list[CommonFlag]:
         CommonFlag(
             "-r",
             "--remote",
-            default="https://github.com/NixOS/nixpkgs",
+            default="https://github.com/auxolotl/nixpkgs",
             help="Name of the nixpkgs repo to review",
         ),
         CommonFlag(

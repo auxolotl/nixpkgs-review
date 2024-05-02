@@ -6,7 +6,7 @@ from typing import Any
 
 
 def pr_url(pr: int) -> str:
-    return f"https://github.com/NixOS/nixpkgs/pull/{pr}"
+    return f"https://github.com/auxolotl/nixpkgs/pull/{pr}"
 
 
 class GithubClient:
@@ -42,21 +42,21 @@ class GithubClient:
         "Post a comment on a PR with nixpkgs-review report"
         print(f"Posting result comment on {pr_url(pr)}")
         return self.post(
-            f"/repos/NixOS/nixpkgs/issues/{pr}/comments", data={"body": msg}
+            f"/repos/auxolotl/nixpkgs/issues/{pr}/comments", data={"body": msg}
         )
 
     def approve_pr(self, pr: int) -> Any:
         "Approve a PR"
         print(f"Approving {pr_url(pr)}")
         return self.post(
-            f"/repos/NixOS/nixpkgs/pulls/{pr}/reviews",
+            f"/repos/auxolotl/nixpkgs/pulls/{pr}/reviews",
             data={"event": "APPROVE"},
         )
 
     def merge_pr(self, pr: int) -> Any:
         "Merge a PR. Requires maintainer access to NixPkgs"
         print(f"Merging {pr_url(pr)}")
-        return self.put(f"/repos/NixOS/nixpkgs/pulls/{pr}/merge")
+        return self.put(f"/repos/auxolotl/nixpkgs/pulls/{pr}/merge")
 
     def graphql(self, query: str) -> dict[str, Any]:
         resp = self.post("/graphql", data={"query": query})
@@ -67,7 +67,7 @@ class GithubClient:
 
     def pull_request(self, number: int) -> Any:
         "Get a pull request"
-        return self.get(f"repos/NixOS/nixpkgs/pulls/{number}")
+        return self.get(f"repos/auxolotl/nixpkgs/pulls/{number}")
 
     def get_borg_eval_gist(self, pr: dict[str, Any]) -> dict[str, set[str]] | None:
         packages_per_system: defaultdict[str, set[str]] = defaultdict(set)
