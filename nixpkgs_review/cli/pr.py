@@ -75,7 +75,9 @@ def pr_command(args: argparse.Namespace) -> str:
                 )
                 contexts.append((pr, builddir.path, review.build_pr(pr)))
             except NixpkgsReviewError as e:
-                warn(f"https://github.com/auxolotl/nixpkgs/pull/{pr} failed to build: {e}")
+                warn(
+                    f"https://github.com/auxolotl/nixpkgs/pull/{pr} failed to build: {e}"
+                )
         assert review is not None
 
         for pr, path, attrs in contexts:
