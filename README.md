@@ -1,3 +1,14 @@
+Hi! As part of our roadmap changes, we’ve decided to focus on providing our ground-up alternative for nixpkgs rather than rebranding current nixpkgs.
+
+That also means that this fork of nixpkgs-review currently has no purpose. We will instead focus on providing CI infrastructure for our alternative to nixpkgs.
+
+If you’re interested in why we chose this, we’ve made [a full update of our roadmap on our forums](https://forum.aux.computer/t/updates-and-clarifications-to-our-roadmap/593?u=minion) which goes further into the detail of this and several other decisions.
+
+Thanks,
+The Auxolotl steering committee.
+
+---
+
 # nixpkgs-review
 
 ![Build Status](https://github.com/Mic92/nixpkgs-review/workflows/Test/badge.svg)
